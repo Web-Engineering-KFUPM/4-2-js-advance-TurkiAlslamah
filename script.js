@@ -85,6 +85,11 @@ Task:
 2) Find and display the current day of month, month (0–11), and year.
 //    (Hint: getDate(), getMonth(), getFullYear() )
 */
+const now = new Date();
+console.log("Current Date: " + now);
+console.log("Day of Month: " + now.getDate());
+console.log("Month (0-11): " + now.getMonth());
+console.log("Year: " + now.getFullYear());
 
 // ============================================================
 // TODO-5: ARRAY + SPREAD — find MIN and MAX from 10 numbers
@@ -95,6 +100,11 @@ Task:
 2) Use spread syntax with Math.min(...) and Math.max(...) to find extremes.
 3) Display both values.
 */
+const numbers = [34, 7, 23, 32, 5, 62, 32, 78, 1, 90];
+console.log("Numbers: " + numbers);
+console.log("Minimum: " + Math.min(...numbers));
+console.log("Maximum: " + Math.max(...numbers));
+   
 
 // ===================================================================
 // TODO-6: EXCEPTIONS — try/catch/finally with EMPTY ARRAY edge case
@@ -106,6 +116,18 @@ Task:
 3) Handle the error using try { ... } catch (e) { ... } finally { ... } and log messages
    in each block so you can see the flow of control.
 */
+function findMax(arr) {
+  if (arr.length === 0) {
+    throw new Error("Array is empty");
+  }
+}
+try {
+   findMax([]);
+} catch (e) {
+   console.log("Caught an error: " + e.message);
+} finally {
+   console.log("Execution completed (finally block).");
+}
 
 // ===================================================================================
 // TODO-7: REGEX + forEach — find words containing 'ab' and log matches from the list
